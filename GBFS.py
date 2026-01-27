@@ -14,3 +14,4 @@ while pq:
     if n == 'G': break
     for nxt in graph[n]:
         heapq.heappush(pq, (h[nxt], nxt))
+
