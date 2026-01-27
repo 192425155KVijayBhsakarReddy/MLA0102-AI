@@ -51,4 +51,31 @@ Water Jug problem
         END WHILE
 
         PRINT "Target Not Possible"  
+GBFS
 
+	CREATE priority queue PQ
+	INSERT Start using heuristic
+
+	WHILE PQ not empty DO
+    	Node ← REMOVE lowest heuristic node
+    	PRINT Node
+    	IF Node = Goal THEN EXIT
+    	INSERT neighbors into PQ
+	END WHILE
+A* Search
+
+		CREATE priority queue PQ
+	INSERT (f=0, Start)
+
+	WHILE PQ not empty DO
+   	 Node ← REMOVE node with lowest f
+   	 IF Node = Goal THEN
+        PRINT "Goal Reached"
+        EXIT
+   	 END IF
+   	 	FOR each Neighbor DO
+       	 g ← path cost
+       	 f ← g + heuristic
+       	 INSERT Neighbor into PQ
+    	END FOR
+	END WHILE
