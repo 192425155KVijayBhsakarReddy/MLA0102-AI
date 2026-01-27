@@ -15,7 +15,6 @@ Breadth First search BFS
         END FOR
      END WHILE
 
-
 Depth first search
 
     CREATE empty set Visited
@@ -29,6 +28,23 @@ Depth first search
             END IF
         END FOR
     END DFS_Visit
+
+UCS
+	
+	INSERT (0, Start) into PQ      // (cost, node)
+	WHILE PQ not empty DO
+    (Cost, Node) ← REMOVE node with minimum cost from PQ
+    IF Node = Goal THEN
+        PRINT "Goal Reached with cost", Cost
+        EXIT
+    END IF
+   	 IF Node not in Visited THEN
+       	 ADD Node to Visited
+       	 FOR each Neighbor of Node DO
+           	 INSERT (Cost + EdgeCost, Neighbor) into PQ
+       	 END FOR
+    	END IF
+	END WHILE
     
 Water Jug problem
 
