@@ -95,3 +95,18 @@ A* Search
        	 INSERT Neighbor into PQ
     	END FOR
 	END WHILE
+Alpha beta
+
+	IF Depth = 0 THEN RETURN value
+
+	IF IsMax THEN
+    	FOR each child DO
+       	 α ← max(α, AlphaBeta(child))
+        	IF β ≤ α THEN BREAK
+    	END FOR
+	ELSE
+    	FOR each child DO
+        	β ← min(β, AlphaBeta(child))
+        	IF β ≤ α THEN BREAK
+   		END FOR
+	END IF
