@@ -95,6 +95,17 @@ A* Search
        	 INSERT Neighbor into PQ
     	END FOR
 	END WHILE
+Mini-max
+
+	IF Depth = 0 OR Node is leaf THEN
+    RETURN value
+	END IF
+
+	IF IsMax THEN
+    	RETURN max(Minimax(children))
+	ELSE
+    	RETURN min(Minimax(children))
+	END IF
 Alpha beta
 
 	IF Depth = 0 THEN RETURN value
